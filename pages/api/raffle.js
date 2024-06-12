@@ -48,16 +48,16 @@ const createRaffleWithWallet = async () => {
 export default async function handler(req, res) {
     if (req.method === 'GET') {
         try {
-            const contractAddress = await readEventDataFromKV();
-            if (!contractAddress) {
-                return res.status(404).json({ error: 'Contract address not found' });
-            }
+            // const contractAddress = await readEventDataFromKV();
+            // if (!contractAddress) {
+            //     return res.status(404).json({ error: 'Contract address not found' });
+            // }
 
-            const contract = new ethers.Contract(contractAddress, raffleAbi, wallet);
+            // const contract = new ethers.Contract(contractAddress, raffleAbi, wallet);
 
-            // Raffle bitirme işlemini gerçekleştir
-            const tx = await contract.pickWinner();
-            await tx.wait();
+            // // Raffle bitirme işlemini gerçekleştir
+            // const tx = await contract.pickWinner();
+            // await tx.wait();
             await createRaffleWithWallet();
             res.status(200).json({ message: 'Raffle created successfully' });
         } catch (error) {
