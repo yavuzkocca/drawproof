@@ -88,7 +88,7 @@ export default function LotteryEntrance() {
         const recentWinnerFromCall = await winner()
         const numPlayersFromCallv1 = await getPlayers()
         const numPlayersFromCall = numPlayersFromCallv1?.length
-        const numMoneyGathered = (numPlayersFromCallv1?.length * 0.1).toString()
+        const numMoneyGathered = (numPlayersFromCallv1?.length * 0.001).toString()
 
         setMoneyGathered(numMoneyGathered)
         setNumberOfPlayers(numPlayersFromCall)
