@@ -46,7 +46,7 @@ export default function LotteryEntrance() {
 
         try {
             // enter fonksiyonunu çağırın
-            const transaction = await contract.enter({ value: ethers.utils.parseEther("0.1") });
+            const transaction = await contract.enter({ value: ethers.utils.parseEther("0.001") });
             await transaction.wait();
 
             // Son işlemi döndür
@@ -138,7 +138,7 @@ export default function LotteryEntrance() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                            <span className="text-l font-bold text-gray-900 dark:text-white">Entrance Fee: 0.1 ETH</span>
+                            <span className="text-l font-bold text-gray-900 dark:text-white">Entrance Fee: 0.001 ETH</span>
                             {raffleContract ? (
                                 <>
                                     {//ENTER RAFFLE BUTTON
